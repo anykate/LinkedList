@@ -15,5 +15,5 @@ max_line_length = 120
 trim_trailing_whitespace = true
 
 # python space indentation
-[*.{py}]
+[*.{py,pyc}]
 indent_style = space
