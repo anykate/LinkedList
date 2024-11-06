@@ -69,6 +69,7 @@ if __name__ == '__main__':
             print("1) Add data to Linked List")
             print("2) Display Linked List")
             print("3) Search data in Linked List")
+            print("\nEnter any numeric value to terminate the program...")
 
             choice = int(input('Enter your choice: '))
 
