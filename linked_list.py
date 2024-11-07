@@ -59,6 +59,29 @@ class LinkedList:
 
         print('Element not found')
 
+    def delete(self, data: int) -> None:
+        if not self.head:
+            print('List is empty')
+            return
+
+        current = self.head
+
+        if current is not None:
+            if current.data == data:
+                self.head = current.next
+                return
+
+        while current is not None:
+            if current.data == data:
+                break
+            prev = current
+            current = current.next
+
+        if current is None:
+            return
+
+        prev.next = current.next
+
 
 if __name__ == '__main__':
     ll = LinkedList()
@@ -69,7 +92,8 @@ if __name__ == '__main__':
             print("1) Add data to Linked List")
             print("2) Display Linked List")
             print("3) Search data in Linked List")
-            print("\nEnter any numeric value to terminate the program...")
+            print("4) Delete data in Linked List")
+            print("\nEnter any OTHER numeric value to terminate the program...")
 
             choice = int(input('Enter your choice: '))
 
@@ -84,6 +108,10 @@ if __name__ == '__main__':
                 case 3:
                     ele = int(input('Enter element to be searched for: '))
                     ll.search(ele)
+
+                case 4:
+                    ele = int(input('Enter element to be deleted: '))
+                    ll.delete(ele)
 
                 case _:
                     print('Terminating...')
